@@ -36,6 +36,7 @@ E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\secu
 E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\security\server\utils\FileUtil.java
 E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\security\server\dao\RoleDao.java
 E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\security\server\dto\UserDto.java
+E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\security\server\utils\RedisUtil.java
 E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\security\server\model\Role.java
 E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\security\server\service\JobService.java
 E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\security\server\page\table\PageTableArgumentResolver.java
@@ -64,6 +65,7 @@ E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\secu
 E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\security\server\service\impl\JobServiceImpl.java
 E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\security\server\service\SysLogService.java
 E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\security\server\service\impl\MailServiceImpl.java
+E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\security\server\utils\JedisTools.java
 E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\security\server\advice\ExceptionHandlerAdvice.java
 E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\security\server\dao\DictDao.java
 E:\java\01、boot-security源码\boot-security源码\src\main\java\com\boot\security\server\dao\PermissionDao.java
