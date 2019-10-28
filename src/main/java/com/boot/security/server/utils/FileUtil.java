@@ -15,8 +15,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 文件工具类
- * 
- * @author 小威老师 xiaoweijiagou@163.com
  *
  */
 public class FileUtil {

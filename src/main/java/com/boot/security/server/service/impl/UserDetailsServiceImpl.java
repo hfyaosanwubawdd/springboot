@@ -23,8 +23,6 @@ import com.boot.security.server.service.UserService;
  * spring security登陆处理<br>
  * <p>
  * 密码校验请看文档（02 框架及配置），第三章第4节
- *
- * @author 小威老师 xiaoweijiagou@163.com
  */
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

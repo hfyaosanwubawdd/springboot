@@ -5,8 +5,6 @@ import java.util.Map;
 
 /**
  * 分页查询参数
- * 
- * @author 小威老师 xiaoweijiagou@163.com
  *
  */
 public class PageTableRequest implements Serializable {

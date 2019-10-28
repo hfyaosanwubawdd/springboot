@@ -16,9 +16,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * swagger文档
- * 
- * @author 小威老师 xiaoweijiagou@163.com
- *
  *         2017年7月21日
  */
 @Configuration
@@ -35,7 +32,7 @@ public class SwaggerConfig {
 
 		return new Docket(DocumentationType.SWAGGER_2).groupName("swagger接口文档")
 				.apiInfo(new ApiInfoBuilder().title("swagger接口文档")
-						.contact(new Contact("小威老师", "", "xiaoweijiagou@163.com")).version("1.0").build())
+						.contact(new Contact("小何老师", "", "hfyaosanwubadt@163.com")).version("1.0").build())
 				.globalOperationParameters(Lists.newArrayList(builder.build()))
 				.select().paths(PathSelectors.any()).build();
 	}

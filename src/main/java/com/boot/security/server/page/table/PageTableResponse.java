@@ -5,9 +5,6 @@ import java.util.List;
 
 /**
  * 分页查询返回
- * 
- * @author 小威老师 xiaoweijiagou@163.com
- *
  */
 public class PageTableResponse implements Serializable {
 

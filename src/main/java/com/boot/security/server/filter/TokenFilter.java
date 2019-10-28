@@ -21,8 +21,6 @@ import com.boot.security.server.service.TokenService;
 /**
  * Token过滤器
  * 
- * @author 小威老师 xiaoweijiagou@163.com
- *
  *         2017年10月14日
  */
 @Component

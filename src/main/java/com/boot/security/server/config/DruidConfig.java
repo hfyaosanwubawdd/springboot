@@ -17,9 +17,6 @@ import java.sql.SQLException;
 /**
  * Druid数据源配置
  * 2018.05.24改为配置的方式,配置前缀spring.datasource.druid，看下application.yml
- *
- * @author 小威老师 xiaoweijiagou@163.com
- *
  */
 @Deprecated
 //@Configuration
@@ -55,9 +52,6 @@ public class DruidConfig {
 
 	/**
 	 * 数据源配置
-	 * 
-	 * @author 小威老师 xiaoweijiagou@163.com
-	 *
 	 */
 	@ConfigurationProperties(prefix = "spring.datasource")
 	public class DataSourceProperties {

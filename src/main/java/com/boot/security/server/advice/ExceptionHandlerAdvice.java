@@ -16,9 +16,6 @@ import com.boot.security.server.dto.ResponseInfo;
 
 /**
  * springmvc异常处理
- * 
- * @author 小威老师 xiaoweijiagou@163.com
- *
  */
 @RestControllerAdvice
 public class ExceptionHandlerAdvice {

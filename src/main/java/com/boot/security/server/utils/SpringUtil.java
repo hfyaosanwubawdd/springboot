@@ -8,8 +8,6 @@ import org.springframework.stereotype.Component;
 
 /**
  * spring获取bean工具类
- * 
- * @author 小威老师 xiaoweijiagou@163.com
  *
  */
 @Component
