@@ -20,8 +20,6 @@ public class UserUtil {
 				return (LoginUser) authentication.getPrincipal();
 			}
 		}
-
 		return null;
 	}
-
 }
