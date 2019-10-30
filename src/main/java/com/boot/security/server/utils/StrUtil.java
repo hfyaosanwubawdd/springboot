@@ -2,6 +2,9 @@ package com.boot.security.server.utils;
 
 import java.util.List;
 
+import org.springframework.boot.autoconfigure.data.redis.RedisProperties.Jedis;
+import org.springframework.data.redis.connection.jedis.JedisUtils;
+
 import com.google.common.collect.Lists;
 
 /**
@@ -49,5 +52,4 @@ public class StrUtil {
 
 		return buffer.toString();
 	}
-
 }
