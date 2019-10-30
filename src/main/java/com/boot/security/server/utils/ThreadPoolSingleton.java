@@ -19,14 +19,14 @@ public class ThreadPoolSingleton {
 	private ThreadPoolExecutor threadPool;
 	private  BlockingQueue<Runnable> queue;
 	
-	private static class ThreadPoolSingletonInstance {
-		private static final ThreadPoolSingleton INSTANCE = new ThreadPoolSingleton();
-	}
-	
 	private ThreadPoolSingleton() {
 		queue = new LinkedBlockingQueue<Runnable>(1);
 		threadPool = new ThreadPoolExecutor(CORE_POOL_SIZE,MAX_POOL_SIZE, KEEP_ALIVE_TIME, TimeUnit.SECONDS,queue);
 		threadPool.setRejectedExecutionHandler(new ThreadPoolExecutor.AbortPolicy());
+	}
+	
+	private static class ThreadPoolSingletonInstance {
+		private static final ThreadPoolSingleton INSTANCE = new ThreadPoolSingleton();
 	}
 	
 	public static ThreadPoolSingleton getinstance() {
