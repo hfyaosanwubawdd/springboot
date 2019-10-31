@@ -72,3 +72,11 @@ token:
   jwtSecret: (XIAO:)_$^11244^%$_(WEI:)_@@++--(LAO:)_++++_.sds_(SHI:)
 server:
   port: 8080
+#es服务器地址配置
+elasticsearch:
+  userName:
+  password:
+  rest:
+    hostNames: 114.67.105.222
+    port: 9200
+  
