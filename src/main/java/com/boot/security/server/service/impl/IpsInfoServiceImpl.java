@@ -5,14 +5,15 @@ import org.springframework.stereotype.Service;
 import com.boot.security.server.dao.IpsInfoDao;
 import com.boot.security.server.model.IpsInfoEntity;
 import com.boot.security.server.service.IpsInfoService;
+import com.boot.security.server.utils.SysUtils;
 
 @Service
 public class IpsInfoServiceImpl implements IpsInfoService {
 	@Autowired
 	private IpsInfoDao ipsInfoDao;
 	@Override
-	public IpsInfoEntity getBySysname(String sysname) {
-		return ipsInfoDao.getBySysname(sysname);
+	public IpsInfoEntity getBySysname() {
+		return ipsInfoDao.getBySysname(SysUtils.getInetAddress().getHostName());
 	}
 
 }
