@@ -1006,6 +1006,11 @@ public class JedisTools {
 	    		return null;
 	    	}
 	    }
+	    
+	    public static void main(String[] args) {
+			Jedis resource = getResource();
+			resource.setnx("", "324234234");
+		}
 }
 
 class ObjectUtils{

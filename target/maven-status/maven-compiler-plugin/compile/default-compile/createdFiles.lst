@@ -28,6 +28,7 @@ com\boot\security\server\model\TokenModel.class
 com\boot\security\server\controller\SysLogsController.class
 com\boot\security\server\service\impl\UserDetailsServiceImpl.class
 com\boot\security\server\dao\UserDao.class
+com\boot\security\server\utils\ThreadPoolSingleton$1.class
 com\boot\security\server\dao\RoleDao.class
 com\boot\security\server\dto\NoticeVO.class
 com\boot\security\server\controller\MailController.class
@@ -76,7 +77,6 @@ com\boot\security\server\page\table\PageTableHandler$CountHandler.class
 com\boot\security\server\model\Mail.class
 com\boot\security\server\controller\FileController$2.class
 com\boot\security\server\model\JobModel.class
-com\boot\security\server\utils\RedisUtil.class
 com\boot\security\server\dao\FileInfoDao.class
 com\boot\security\server\controller\RoleController.class
 com\boot\security\server\utils\ExcelUtil.class

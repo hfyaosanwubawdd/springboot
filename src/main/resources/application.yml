@@ -34,6 +34,7 @@ spring:
       load-on-startup: 1
   redis:
     host: 114.67.105.222
+    password: Hefei19881002
     port: 6379
     timeout: 10s
     lettuce:
@@ -45,12 +46,19 @@ spring:
   mail:
     default-encoding: UTF-8
     host: smtp.163.com
-    username:
-    password:
+    username: hfyaosanwubadt@163.com
+    password: yaosanwuba
     protocol: smtp
     test-connection: false
 #    properties:
 #      mail.smtp.auth: true
+  data:
+    elasticsearch:
+      cluster-nodes: 114.67.105.222:9300 # 配置IP及端口号
+      cluster-name: elasticsearch
+#      cluster-name: elasticsearch622 # 配置集群名，默认为elasticsearch，如果手动更改过，这里一定要指定
+#      repositories:
+#        enabled: true
 mybatis:
   type-aliases-package: com.boot.security.server.model
   mapper-locations: classpath:/mybatis-mappers/*
@@ -79,4 +87,6 @@ elasticsearch:
   rest:
     hostNames: 114.67.105.222
     port: 9200
-  
+
+
+ 
