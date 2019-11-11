@@ -1,5 +1,7 @@
 package com.boot.security.server.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
@@ -14,5 +16,5 @@ import com.boot.security.server.model.IpsInfoEntity;
 @Mapper
 public interface IpsInfoDao {
 	@Select("select * from s_properties where sysname = #{sysname}")
-	IpsInfoEntity getBySysname(String sysname);
+	List<IpsInfoEntity> getBySysname(String sysname);
 }
