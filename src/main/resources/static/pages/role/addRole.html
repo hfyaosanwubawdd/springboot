@@ -36,6 +36,7 @@
 			<div class="form-actions">
 				<div class="row" align="center">
 					<div class="col-md-12">
+					<button class="btn btn-primary" onclick="ips()'">ips</button>
 						<button class="btn btn-primary" onclick="location.href='roleList.html'">返回</button>
 						<button class="btn btn-primary" type="submit" onclick="add()">
 							<i class="fa fa-save"></i> 保存
@@ -107,6 +108,13 @@
 			});
 		}
 		
+		function ips() {
+			$.ajax({
+				type : 'post',
+				url : '/roles/ips',
+				contentType: "application/json; charset=utf-8",  
+			});
+		}
 	</script>
 </body>
 </html>

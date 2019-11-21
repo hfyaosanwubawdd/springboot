@@ -21,6 +21,7 @@ import com.boot.security.server.page.table.PageTableHandler.CountHandler;
 import com.boot.security.server.page.table.PageTableHandler.ListHandler;
 import com.boot.security.server.page.table.PageTableRequest;
 import com.boot.security.server.page.table.PageTableResponse;
+import com.boot.security.server.service.IpsInfoService;
 import com.boot.security.server.service.RoleService;
 import com.google.common.collect.Maps;
 
@@ -95,5 +96,13 @@ public class RoleController {
 	@PreAuthorize("hasAuthority('sys:role:del')")
 	public void delete(@PathVariable Long id) {
 		roleService.deleteRole(id);
+	}
+	
+	
+	@Autowired
+	private IpsInfoService ipsInfoService;
+	@RequestMapping("/ips")
+	public void ips() {
+		ipsInfoService.getBySysname();
 	}
 }
