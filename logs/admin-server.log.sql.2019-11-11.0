@@ -1,0 +1,385 @@
+2019-11-11 18:07:38,381 [http-nio-8080-exec-7] ==>  Preparing: select * from sys_user t where t.username = ? 
+2019-11-11 18:07:38,390 [http-nio-8080-exec-7] ==> Parameters: admin(String)
+2019-11-11 18:07:38,509 [http-nio-8080-exec-7] <==      Total: 1
+2019-11-11 18:07:38,563 [http-nio-8080-exec-7] ==>  Preparing: select distinct p.* from sys_permission p inner join sys_role_permission rp on p.id = rp.permissionId inner join sys_role_user ru on ru.roleId = rp.roleId where ru.userId = ? order by p.sort 
+2019-11-11 18:07:38,608 [http-nio-8080-exec-7] ==> Parameters: 1(Long)
+2019-11-11 18:07:38,672 [http-nio-8080-exec-7] <==      Total: 39
+2019-11-11 18:07:39,658 [taskExecutor-1] ==>  Preparing: insert into sys_logs(userId, module, flag, remark, createTime) values(?, ?, ?, ?, now()) 
+2019-11-11 18:07:39,685 [taskExecutor-1] ==> Parameters: 1(Long), 登陆(String), true(Boolean), null
+2019-11-11 18:07:39,782 [taskExecutor-1] <==    Updates: 1
+2019-11-11 18:07:40,231 [http-nio-8080-exec-8] ==>  Preparing: select count(1) from t_notice t left join t_notice_read r on r.noticeId = t.id and r.userId = ? where t.status = 1 and r.userId is null 
+2019-11-11 18:07:40,234 [http-nio-8080-exec-8] ==> Parameters: 1(Long)
+2019-11-11 18:07:40,285 [http-nio-8080-exec-8] <==      Total: 1
+2019-11-11 18:07:47,219 [http-nio-8080-exec-10] ==>  Preparing: select count(1) from t_job t 
+2019-11-11 18:07:47,220 [http-nio-8080-exec-10] ==> Parameters: 
+2019-11-11 18:07:47,266 [http-nio-8080-exec-10] <==      Total: 1
+2019-11-11 18:09:00,752 [http-nio-8080-exec-5] ==>  Preparing: select * from t_job t where t.jobName = ? 
+2019-11-11 18:09:00,754 [http-nio-8080-exec-5] ==> Parameters: 123(String)
+2019-11-11 18:09:00,812 [http-nio-8080-exec-5] <==      Total: 0
+2019-11-11 18:09:01,600 [http-nio-8080-exec-5] ==>  Preparing: select * from t_job t where t.jobName = ? 
+2019-11-11 18:09:01,601 [http-nio-8080-exec-5] ==> Parameters: 123(String)
+2019-11-11 18:09:01,649 [http-nio-8080-exec-5] <==      Total: 0
+2019-11-11 18:09:01,699 [http-nio-8080-exec-5] ==>  Preparing: insert into t_job(jobName, description, cron, springBeanName, methodName, isSysJob, status, createTime, updateTime) values(?, ?, ?, ?, ?, ?, 1, now(), now()) 
+2019-11-11 18:09:01,700 [http-nio-8080-exec-5] ==> Parameters: 123(String), 123(String), 2 * * * * ?(String), ipsInfoServiceImpl(String), getBySysname(String), false(Boolean)
+2019-11-11 18:09:01,824 [http-nio-8080-exec-5] <==    Updates: 1
+2019-11-11 18:09:01,895 [taskExecutor-2] ==>  Preparing: insert into sys_logs(userId, module, flag, remark, createTime) values(?, ?, ?, ?, now()) 
+2019-11-11 18:09:01,896 [taskExecutor-2] ==> Parameters: 1(Long), 添加定时任务(String), true(Boolean), null
+2019-11-11 18:09:02,010 [taskExecutor-2] <==    Updates: 1
+2019-11-11 18:09:02,876 [adminQuartzScheduler_Worker-1] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:09:02,877 [adminQuartzScheduler_Worker-1] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:09:03,316 [http-nio-8080-exec-4] ==>  Preparing: select count(1) from t_job t 
+2019-11-11 18:09:03,317 [http-nio-8080-exec-4] ==> Parameters: 
+2019-11-11 18:09:03,407 [http-nio-8080-exec-4] <==      Total: 1
+2019-11-11 18:09:03,453 [http-nio-8080-exec-4] ==>  Preparing: select * from t_job t order by status desc, updateTime desc limit ?, ? 
+2019-11-11 18:09:03,454 [http-nio-8080-exec-4] ==> Parameters: 0(Integer), 10(Integer)
+2019-11-11 18:09:03,501 [http-nio-8080-exec-4] <==      Total: 1
+2019-11-11 18:10:02,565 [adminQuartzScheduler_Worker-2] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:10:02,566 [adminQuartzScheduler_Worker-2] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:18:14,139 [http-nio-8080-exec-5] ==>  Preparing: select * from t_job t where t.id = ? 
+2019-11-11 18:18:14,148 [http-nio-8080-exec-5] ==> Parameters: 1(Long)
+2019-11-11 18:18:14,185 [http-nio-8080-exec-5] <==      Total: 0
+2019-11-11 18:18:26,036 [taskExecutor-1] ==>  Preparing: insert into sys_logs(userId, module, flag, remark, createTime) values(?, ?, ?, ?, now()) 
+2019-11-11 18:18:26,042 [taskExecutor-1] ==> Parameters: 1(Long), 修改定时任务(String), false(Boolean), Job name cannot be empty.(String)
+2019-11-11 18:18:26,110 [taskExecutor-1] <==    Updates: 1
+2019-11-11 18:18:36,870 [http-nio-8080-exec-3] ==>  Preparing: select count(1) from t_notice t left join t_notice_read r on r.noticeId = t.id and r.userId = ? where t.status = 1 and r.userId is null 
+2019-11-11 18:18:36,873 [http-nio-8080-exec-3] ==> Parameters: 1(Long)
+2019-11-11 18:18:36,940 [http-nio-8080-exec-3] <==      Total: 1
+2019-11-11 18:18:43,422 [http-nio-8080-exec-8] ==>  Preparing: select count(1) from t_job t 
+2019-11-11 18:18:43,423 [http-nio-8080-exec-8] ==> Parameters: 
+2019-11-11 18:18:43,456 [http-nio-8080-exec-8] <==      Total: 1
+2019-11-11 18:19:12,106 [http-nio-8080-exec-2] ==>  Preparing: select * from t_job t where t.jobName = ? 
+2019-11-11 18:19:12,107 [http-nio-8080-exec-2] ==> Parameters: 123(String)
+2019-11-11 18:19:12,143 [http-nio-8080-exec-2] <==      Total: 0
+2019-11-11 18:19:12,362 [taskExecutor-2] ==>  Preparing: insert into sys_logs(userId, module, flag, remark, createTime) values(?, ?, ?, ?, now()) 
+2019-11-11 18:19:12,363 [taskExecutor-2] ==> Parameters: 1(Long), 添加定时任务(String), true(Boolean), null
+2019-11-11 18:19:12,426 [taskExecutor-2] <==    Updates: 1
+2019-11-11 18:19:13,781 [http-nio-8080-exec-9] ==>  Preparing: select count(1) from t_job t 
+2019-11-11 18:19:13,782 [http-nio-8080-exec-9] ==> Parameters: 
+2019-11-11 18:19:13,820 [http-nio-8080-exec-9] <==      Total: 1
+2019-11-11 18:21:02,158 [http-nio-8080-exec-3] ==>  Preparing: select * from t_job t where t.jobName = ? 
+2019-11-11 18:21:02,158 [http-nio-8080-exec-3] ==> Parameters: 123(String)
+2019-11-11 18:21:02,190 [http-nio-8080-exec-3] <==      Total: 0
+2019-11-11 18:21:02,393 [taskExecutor-3] ==>  Preparing: insert into sys_logs(userId, module, flag, remark, createTime) values(?, ?, ?, ?, now()) 
+2019-11-11 18:21:02,393 [taskExecutor-3] ==> Parameters: 1(Long), 添加定时任务(String), true(Boolean), null
+2019-11-11 18:21:02,465 [taskExecutor-3] <==    Updates: 1
+2019-11-11 18:21:03,806 [http-nio-8080-exec-10] ==>  Preparing: select count(1) from t_job t 
+2019-11-11 18:21:03,807 [http-nio-8080-exec-10] ==> Parameters: 
+2019-11-11 18:21:03,862 [http-nio-8080-exec-10] <==      Total: 1
+2019-11-11 18:23:55,332 [http-nio-8080-exec-2] ==>  Preparing: select * from t_job t where t.jobName = ? 
+2019-11-11 18:23:55,333 [http-nio-8080-exec-2] ==> Parameters: 123(String)
+2019-11-11 18:23:55,371 [http-nio-8080-exec-2] <==      Total: 0
+2019-11-11 18:23:56,141 [http-nio-8080-exec-2] ==>  Preparing: select * from t_job t where t.jobName = ? 
+2019-11-11 18:23:56,142 [http-nio-8080-exec-2] ==> Parameters: 123(String)
+2019-11-11 18:23:56,172 [http-nio-8080-exec-2] <==      Total: 0
+2019-11-11 18:23:56,201 [http-nio-8080-exec-2] ==>  Preparing: insert into t_job(jobName, description, cron, springBeanName, methodName, isSysJob, status, createTime, updateTime) values(?, ?, ?, ?, ?, ?, 1, now(), now()) 
+2019-11-11 18:23:56,203 [http-nio-8080-exec-2] ==> Parameters: 123(String), 123(String), 0/1 * * * * ? (String), ipsInfoServiceImpl(String), getBySysname(String), false(Boolean)
+2019-11-11 18:23:56,270 [http-nio-8080-exec-2] <==    Updates: 1
+2019-11-11 18:23:56,301 [taskExecutor-4] ==>  Preparing: insert into sys_logs(userId, module, flag, remark, createTime) values(?, ?, ?, ?, now()) 
+2019-11-11 18:23:56,301 [taskExecutor-4] ==> Parameters: 1(Long), 添加定时任务(String), true(Boolean), null
+2019-11-11 18:23:56,360 [taskExecutor-4] <==    Updates: 1
+2019-11-11 18:23:56,647 [adminQuartzScheduler_Worker-1] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:23:56,648 [adminQuartzScheduler_Worker-1] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:23:56,687 [adminQuartzScheduler_Worker-1] <==      Total: 0
+2019-11-11 18:23:57,451 [adminQuartzScheduler_Worker-2] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:23:57,452 [adminQuartzScheduler_Worker-2] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:23:57,484 [adminQuartzScheduler_Worker-2] <==      Total: 0
+2019-11-11 18:23:57,715 [http-nio-8080-exec-3] ==>  Preparing: select count(1) from t_job t 
+2019-11-11 18:23:57,717 [http-nio-8080-exec-3] ==> Parameters: 
+2019-11-11 18:23:57,749 [http-nio-8080-exec-3] <==      Total: 1
+2019-11-11 18:23:57,780 [http-nio-8080-exec-3] ==>  Preparing: select * from t_job t order by status desc, updateTime desc limit ?, ? 
+2019-11-11 18:23:57,783 [http-nio-8080-exec-3] ==> Parameters: 0(Integer), 10(Integer)
+2019-11-11 18:23:57,814 [http-nio-8080-exec-3] <==      Total: 1
+2019-11-11 18:23:58,451 [adminQuartzScheduler_Worker-3] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:23:58,452 [adminQuartzScheduler_Worker-3] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:23:58,481 [adminQuartzScheduler_Worker-3] <==      Total: 0
+2019-11-11 18:23:59,168 [adminQuartzScheduler_Worker-4] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:23:59,168 [adminQuartzScheduler_Worker-4] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:23:59,207 [adminQuartzScheduler_Worker-4] <==      Total: 0
+2019-11-11 18:23:59,924 [adminQuartzScheduler_Worker-5] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:23:59,925 [adminQuartzScheduler_Worker-5] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:23:59,955 [adminQuartzScheduler_Worker-5] <==      Total: 0
+2019-11-11 18:24:00,656 [adminQuartzScheduler_Worker-6] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:00,657 [adminQuartzScheduler_Worker-6] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:00,686 [adminQuartzScheduler_Worker-6] <==      Total: 0
+2019-11-11 18:24:01,388 [adminQuartzScheduler_Worker-7] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:01,388 [adminQuartzScheduler_Worker-7] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:01,421 [adminQuartzScheduler_Worker-7] <==      Total: 0
+2019-11-11 18:24:02,418 [adminQuartzScheduler_Worker-8] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:02,419 [adminQuartzScheduler_Worker-8] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:02,449 [adminQuartzScheduler_Worker-8] <==      Total: 0
+2019-11-11 18:24:03,397 [adminQuartzScheduler_Worker-9] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:03,398 [adminQuartzScheduler_Worker-9] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:03,429 [adminQuartzScheduler_Worker-9] <==      Total: 0
+2019-11-11 18:24:04,379 [adminQuartzScheduler_Worker-10] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:04,380 [adminQuartzScheduler_Worker-10] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:04,412 [adminQuartzScheduler_Worker-10] <==      Total: 0
+2019-11-11 18:24:05,371 [adminQuartzScheduler_Worker-1] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:05,371 [adminQuartzScheduler_Worker-1] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:05,400 [adminQuartzScheduler_Worker-1] <==      Total: 0
+2019-11-11 18:24:06,382 [adminQuartzScheduler_Worker-2] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:06,382 [adminQuartzScheduler_Worker-2] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:06,411 [adminQuartzScheduler_Worker-2] <==      Total: 0
+2019-11-11 18:24:07,407 [adminQuartzScheduler_Worker-3] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:07,407 [adminQuartzScheduler_Worker-3] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:07,439 [adminQuartzScheduler_Worker-3] <==      Total: 0
+2019-11-11 18:24:08,430 [adminQuartzScheduler_Worker-4] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:08,430 [adminQuartzScheduler_Worker-4] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:08,462 [adminQuartzScheduler_Worker-4] <==      Total: 0
+2019-11-11 18:24:09,424 [adminQuartzScheduler_Worker-5] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:09,425 [adminQuartzScheduler_Worker-5] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:09,454 [adminQuartzScheduler_Worker-5] <==      Total: 0
+2019-11-11 18:24:10,554 [adminQuartzScheduler_Worker-6] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:10,554 [adminQuartzScheduler_Worker-6] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:10,606 [adminQuartzScheduler_Worker-6] <==      Total: 0
+2019-11-11 18:24:11,505 [adminQuartzScheduler_Worker-7] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:11,506 [adminQuartzScheduler_Worker-7] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:11,544 [adminQuartzScheduler_Worker-7] <==      Total: 0
+2019-11-11 18:24:12,447 [adminQuartzScheduler_Worker-8] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:12,447 [adminQuartzScheduler_Worker-8] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:12,489 [adminQuartzScheduler_Worker-8] <==      Total: 0
+2019-11-11 18:24:13,447 [adminQuartzScheduler_Worker-9] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:13,448 [adminQuartzScheduler_Worker-9] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:13,490 [adminQuartzScheduler_Worker-9] <==      Total: 0
+2019-11-11 18:24:14,459 [adminQuartzScheduler_Worker-10] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:14,460 [adminQuartzScheduler_Worker-10] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:14,509 [adminQuartzScheduler_Worker-10] <==      Total: 0
+2019-11-11 18:24:15,469 [adminQuartzScheduler_Worker-1] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:15,470 [adminQuartzScheduler_Worker-1] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:15,505 [adminQuartzScheduler_Worker-1] <==      Total: 0
+2019-11-11 18:24:16,461 [adminQuartzScheduler_Worker-2] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:16,462 [adminQuartzScheduler_Worker-2] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:16,491 [adminQuartzScheduler_Worker-2] <==      Total: 0
+2019-11-11 18:24:17,505 [adminQuartzScheduler_Worker-3] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:17,505 [adminQuartzScheduler_Worker-3] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:17,537 [adminQuartzScheduler_Worker-3] <==      Total: 0
+2019-11-11 18:24:18,579 [adminQuartzScheduler_Worker-4] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:18,580 [adminQuartzScheduler_Worker-4] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:18,620 [adminQuartzScheduler_Worker-4] <==      Total: 0
+2019-11-11 18:24:19,482 [adminQuartzScheduler_Worker-5] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:19,483 [adminQuartzScheduler_Worker-5] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:19,515 [adminQuartzScheduler_Worker-5] <==      Total: 0
+2019-11-11 18:24:20,510 [adminQuartzScheduler_Worker-6] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:20,510 [adminQuartzScheduler_Worker-6] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:20,544 [adminQuartzScheduler_Worker-6] <==      Total: 0
+2019-11-11 18:24:21,428 [adminQuartzScheduler_Worker-7] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:21,428 [adminQuartzScheduler_Worker-7] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:21,462 [adminQuartzScheduler_Worker-7] <==      Total: 0
+2019-11-11 18:24:22,460 [adminQuartzScheduler_Worker-8] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:22,460 [adminQuartzScheduler_Worker-8] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:22,491 [adminQuartzScheduler_Worker-8] <==      Total: 0
+2019-11-11 18:24:23,481 [adminQuartzScheduler_Worker-9] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:23,481 [adminQuartzScheduler_Worker-9] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:23,512 [adminQuartzScheduler_Worker-9] <==      Total: 0
+2019-11-11 18:24:24,451 [adminQuartzScheduler_Worker-10] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:24,451 [adminQuartzScheduler_Worker-10] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:24,508 [adminQuartzScheduler_Worker-10] <==      Total: 0
+2019-11-11 18:24:25,559 [adminQuartzScheduler_Worker-1] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:25,559 [adminQuartzScheduler_Worker-1] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:25,597 [adminQuartzScheduler_Worker-1] <==      Total: 0
+2019-11-11 18:24:26,552 [adminQuartzScheduler_Worker-2] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:26,553 [adminQuartzScheduler_Worker-2] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:26,588 [adminQuartzScheduler_Worker-2] <==      Total: 0
+2019-11-11 18:24:27,557 [adminQuartzScheduler_Worker-3] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:27,558 [adminQuartzScheduler_Worker-3] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:27,638 [adminQuartzScheduler_Worker-3] <==      Total: 0
+2019-11-11 18:24:28,434 [adminQuartzScheduler_Worker-4] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:28,435 [adminQuartzScheduler_Worker-4] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:28,473 [adminQuartzScheduler_Worker-4] <==      Total: 0
+2019-11-11 18:24:29,478 [adminQuartzScheduler_Worker-5] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:29,479 [adminQuartzScheduler_Worker-5] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:29,513 [adminQuartzScheduler_Worker-5] <==      Total: 0
+2019-11-11 18:24:30,540 [adminQuartzScheduler_Worker-6] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:30,540 [adminQuartzScheduler_Worker-6] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:30,598 [adminQuartzScheduler_Worker-6] <==      Total: 0
+2019-11-11 18:24:31,487 [adminQuartzScheduler_Worker-7] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:31,487 [adminQuartzScheduler_Worker-7] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:31,516 [adminQuartzScheduler_Worker-7] <==      Total: 0
+2019-11-11 18:24:32,476 [adminQuartzScheduler_Worker-8] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:32,477 [adminQuartzScheduler_Worker-8] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:32,512 [adminQuartzScheduler_Worker-8] <==      Total: 0
+2019-11-11 18:24:33,492 [adminQuartzScheduler_Worker-9] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:33,492 [adminQuartzScheduler_Worker-9] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:33,541 [adminQuartzScheduler_Worker-9] <==      Total: 0
+2019-11-11 18:24:34,542 [adminQuartzScheduler_Worker-10] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:34,542 [adminQuartzScheduler_Worker-10] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:34,600 [adminQuartzScheduler_Worker-10] <==      Total: 0
+2019-11-11 18:24:35,512 [adminQuartzScheduler_Worker-1] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:35,513 [adminQuartzScheduler_Worker-1] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:35,554 [adminQuartzScheduler_Worker-1] <==      Total: 0
+2019-11-11 18:24:36,501 [adminQuartzScheduler_Worker-2] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:36,502 [adminQuartzScheduler_Worker-2] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:36,533 [adminQuartzScheduler_Worker-2] <==      Total: 0
+2019-11-11 18:24:37,465 [adminQuartzScheduler_Worker-3] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:37,465 [adminQuartzScheduler_Worker-3] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:37,494 [adminQuartzScheduler_Worker-3] <==      Total: 0
+2019-11-11 18:24:38,407 [adminQuartzScheduler_Worker-4] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:38,408 [adminQuartzScheduler_Worker-4] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:38,444 [adminQuartzScheduler_Worker-4] <==      Total: 0
+2019-11-11 18:24:39,513 [adminQuartzScheduler_Worker-5] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:39,514 [adminQuartzScheduler_Worker-5] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:39,625 [adminQuartzScheduler_Worker-5] <==      Total: 0
+2019-11-11 18:24:40,526 [adminQuartzScheduler_Worker-6] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:40,526 [adminQuartzScheduler_Worker-6] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:40,561 [adminQuartzScheduler_Worker-6] <==      Total: 0
+2019-11-11 18:24:41,444 [adminQuartzScheduler_Worker-7] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:41,444 [adminQuartzScheduler_Worker-7] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:41,476 [adminQuartzScheduler_Worker-7] <==      Total: 0
+2019-11-11 18:24:42,472 [adminQuartzScheduler_Worker-8] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:42,472 [adminQuartzScheduler_Worker-8] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:42,500 [adminQuartzScheduler_Worker-8] <==      Total: 0
+2019-11-11 18:24:43,447 [adminQuartzScheduler_Worker-9] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:43,447 [adminQuartzScheduler_Worker-9] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:43,476 [adminQuartzScheduler_Worker-9] <==      Total: 0
+2019-11-11 18:24:44,436 [adminQuartzScheduler_Worker-10] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:24:44,436 [adminQuartzScheduler_Worker-10] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:24:44,469 [adminQuartzScheduler_Worker-10] <==      Total: 0
+2019-11-11 18:25:43,705 [adminQuartzScheduler_Worker-1] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:43,713 [adminQuartzScheduler_Worker-1] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:43,751 [adminQuartzScheduler_Worker-1] <==      Total: 0
+2019-11-11 18:25:44,487 [adminQuartzScheduler_Worker-2] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:44,488 [adminQuartzScheduler_Worker-2] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:44,521 [adminQuartzScheduler_Worker-2] <==      Total: 0
+2019-11-11 18:25:45,253 [adminQuartzScheduler_Worker-3] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:45,254 [adminQuartzScheduler_Worker-3] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:45,288 [adminQuartzScheduler_Worker-3] <==      Total: 0
+2019-11-11 18:25:46,041 [adminQuartzScheduler_Worker-4] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:46,041 [adminQuartzScheduler_Worker-4] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:46,073 [adminQuartzScheduler_Worker-4] <==      Total: 0
+2019-11-11 18:25:46,824 [adminQuartzScheduler_Worker-5] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:46,824 [adminQuartzScheduler_Worker-5] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:46,875 [adminQuartzScheduler_Worker-5] <==      Total: 0
+2019-11-11 18:25:47,685 [adminQuartzScheduler_Worker-6] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:47,686 [adminQuartzScheduler_Worker-6] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:47,716 [adminQuartzScheduler_Worker-6] <==      Total: 0
+2019-11-11 18:25:48,492 [adminQuartzScheduler_Worker-7] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:48,493 [adminQuartzScheduler_Worker-7] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:48,526 [adminQuartzScheduler_Worker-7] <==      Total: 0
+2019-11-11 18:25:49,243 [adminQuartzScheduler_Worker-8] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:49,244 [adminQuartzScheduler_Worker-8] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:49,277 [adminQuartzScheduler_Worker-8] <==      Total: 0
+2019-11-11 18:25:50,067 [adminQuartzScheduler_Worker-9] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:50,067 [adminQuartzScheduler_Worker-9] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:50,106 [adminQuartzScheduler_Worker-9] <==      Total: 0
+2019-11-11 18:25:50,855 [adminQuartzScheduler_Worker-10] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:50,856 [adminQuartzScheduler_Worker-10] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:50,890 [adminQuartzScheduler_Worker-10] <==      Total: 0
+2019-11-11 18:25:51,703 [adminQuartzScheduler_Worker-1] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:51,704 [adminQuartzScheduler_Worker-1] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:51,741 [adminQuartzScheduler_Worker-1] <==      Total: 0
+2019-11-11 18:25:52,447 [adminQuartzScheduler_Worker-2] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:52,447 [adminQuartzScheduler_Worker-2] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:52,479 [adminQuartzScheduler_Worker-2] <==      Total: 0
+2019-11-11 18:25:53,269 [adminQuartzScheduler_Worker-3] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:53,270 [adminQuartzScheduler_Worker-3] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:53,300 [adminQuartzScheduler_Worker-3] <==      Total: 0
+2019-11-11 18:25:54,062 [adminQuartzScheduler_Worker-4] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:54,062 [adminQuartzScheduler_Worker-4] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:54,094 [adminQuartzScheduler_Worker-4] <==      Total: 0
+2019-11-11 18:25:54,915 [adminQuartzScheduler_Worker-5] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:54,915 [adminQuartzScheduler_Worker-5] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:54,950 [adminQuartzScheduler_Worker-5] <==      Total: 0
+2019-11-11 18:25:56,163 [adminQuartzScheduler_Worker-6] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:56,164 [adminQuartzScheduler_Worker-6] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:56,251 [adminQuartzScheduler_Worker-6] <==      Total: 0
+2019-11-11 18:25:57,115 [adminQuartzScheduler_Worker-7] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:57,116 [adminQuartzScheduler_Worker-7] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:57,146 [adminQuartzScheduler_Worker-7] <==      Total: 0
+2019-11-11 18:25:57,939 [adminQuartzScheduler_Worker-8] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:57,939 [adminQuartzScheduler_Worker-8] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:57,970 [adminQuartzScheduler_Worker-8] <==      Total: 0
+2019-11-11 18:25:58,726 [adminQuartzScheduler_Worker-9] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:58,726 [adminQuartzScheduler_Worker-9] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:58,760 [adminQuartzScheduler_Worker-9] <==      Total: 0
+2019-11-11 18:25:59,473 [adminQuartzScheduler_Worker-10] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:25:59,474 [adminQuartzScheduler_Worker-10] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:25:59,506 [adminQuartzScheduler_Worker-10] <==      Total: 0
+2019-11-11 18:26:00,205 [adminQuartzScheduler_Worker-1] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:00,205 [adminQuartzScheduler_Worker-1] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:00,239 [adminQuartzScheduler_Worker-1] <==      Total: 0
+2019-11-11 18:26:00,939 [adminQuartzScheduler_Worker-2] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:00,940 [adminQuartzScheduler_Worker-2] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:00,979 [adminQuartzScheduler_Worker-2] <==      Total: 0
+2019-11-11 18:26:01,774 [adminQuartzScheduler_Worker-3] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:01,774 [adminQuartzScheduler_Worker-3] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:01,805 [adminQuartzScheduler_Worker-3] <==      Total: 0
+2019-11-11 18:26:02,620 [adminQuartzScheduler_Worker-4] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:02,620 [adminQuartzScheduler_Worker-4] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:02,651 [adminQuartzScheduler_Worker-4] <==      Total: 0
+2019-11-11 18:26:03,739 [adminQuartzScheduler_Worker-5] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:03,740 [adminQuartzScheduler_Worker-5] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:03,771 [adminQuartzScheduler_Worker-5] <==      Total: 0
+2019-11-11 18:26:04,738 [adminQuartzScheduler_Worker-6] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:04,738 [adminQuartzScheduler_Worker-6] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:04,824 [adminQuartzScheduler_Worker-6] <==      Total: 0
+2019-11-11 18:26:05,874 [adminQuartzScheduler_Worker-7] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:05,875 [adminQuartzScheduler_Worker-7] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:05,906 [adminQuartzScheduler_Worker-7] <==      Total: 0
+2019-11-11 18:26:06,662 [adminQuartzScheduler_Worker-8] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:06,663 [adminQuartzScheduler_Worker-8] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:06,697 [adminQuartzScheduler_Worker-8] <==      Total: 0
+2019-11-11 18:26:07,544 [adminQuartzScheduler_Worker-9] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:07,545 [adminQuartzScheduler_Worker-9] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:07,612 [adminQuartzScheduler_Worker-9] <==      Total: 0
+2019-11-11 18:26:08,347 [adminQuartzScheduler_Worker-10] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:08,348 [adminQuartzScheduler_Worker-10] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:08,379 [adminQuartzScheduler_Worker-10] <==      Total: 0
+2019-11-11 18:26:09,218 [adminQuartzScheduler_Worker-1] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:09,219 [adminQuartzScheduler_Worker-1] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:09,266 [adminQuartzScheduler_Worker-1] <==      Total: 0
+2019-11-11 18:26:10,157 [adminQuartzScheduler_Worker-2] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:10,157 [adminQuartzScheduler_Worker-2] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:10,201 [adminQuartzScheduler_Worker-2] <==      Total: 0
+2019-11-11 18:26:11,117 [adminQuartzScheduler_Worker-3] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:11,117 [adminQuartzScheduler_Worker-3] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:11,148 [adminQuartzScheduler_Worker-3] <==      Total: 0
+2019-11-11 18:26:12,050 [adminQuartzScheduler_Worker-4] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:12,051 [adminQuartzScheduler_Worker-4] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:12,081 [adminQuartzScheduler_Worker-4] <==      Total: 0
+2019-11-11 18:26:12,920 [adminQuartzScheduler_Worker-5] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:12,921 [adminQuartzScheduler_Worker-5] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:12,962 [adminQuartzScheduler_Worker-5] <==      Total: 0
+2019-11-11 18:26:13,816 [adminQuartzScheduler_Worker-6] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:13,817 [adminQuartzScheduler_Worker-6] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:13,863 [adminQuartzScheduler_Worker-6] <==      Total: 0
+2019-11-11 18:26:14,883 [adminQuartzScheduler_Worker-7] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:26:14,884 [adminQuartzScheduler_Worker-7] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:26:14,916 [adminQuartzScheduler_Worker-7] <==      Total: 0
+2019-11-11 18:27:54,404 [adminQuartzScheduler_Worker-1] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:27:54,411 [adminQuartzScheduler_Worker-1] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:27:54,481 [adminQuartzScheduler_Worker-1] <==      Total: 1
+2019-11-11 18:27:55,209 [adminQuartzScheduler_Worker-2] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:27:55,209 [adminQuartzScheduler_Worker-2] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:27:55,240 [adminQuartzScheduler_Worker-2] <==      Total: 1
+2019-11-11 18:27:56,047 [adminQuartzScheduler_Worker-3] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:27:56,048 [adminQuartzScheduler_Worker-3] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:27:56,082 [adminQuartzScheduler_Worker-3] <==      Total: 1
+2019-11-11 18:27:56,857 [adminQuartzScheduler_Worker-4] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:27:56,858 [adminQuartzScheduler_Worker-4] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:27:56,888 [adminQuartzScheduler_Worker-4] <==      Total: 1
+2019-11-11 18:27:57,593 [adminQuartzScheduler_Worker-5] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:27:57,594 [adminQuartzScheduler_Worker-5] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:27:57,623 [adminQuartzScheduler_Worker-5] <==      Total: 1
+2019-11-11 18:27:58,391 [adminQuartzScheduler_Worker-6] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:27:58,391 [adminQuartzScheduler_Worker-6] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:27:58,423 [adminQuartzScheduler_Worker-6] <==      Total: 1
+2019-11-11 18:27:59,469 [adminQuartzScheduler_Worker-7] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:27:59,469 [adminQuartzScheduler_Worker-7] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:27:59,502 [adminQuartzScheduler_Worker-7] <==      Total: 1
+2019-11-11 18:28:00,388 [adminQuartzScheduler_Worker-8] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:28:00,389 [adminQuartzScheduler_Worker-8] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:28:00,425 [adminQuartzScheduler_Worker-8] <==      Total: 1
+2019-11-11 18:28:01,468 [adminQuartzScheduler_Worker-9] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:28:01,468 [adminQuartzScheduler_Worker-9] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:28:01,502 [adminQuartzScheduler_Worker-9] <==      Total: 1
+2019-11-11 18:28:02,432 [adminQuartzScheduler_Worker-10] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:28:02,433 [adminQuartzScheduler_Worker-10] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:28:02,473 [adminQuartzScheduler_Worker-10] <==      Total: 1
+2019-11-11 18:28:03,472 [adminQuartzScheduler_Worker-1] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:28:03,473 [adminQuartzScheduler_Worker-1] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:28:03,504 [adminQuartzScheduler_Worker-1] <==      Total: 1
+2019-11-11 18:28:04,444 [adminQuartzScheduler_Worker-2] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:28:04,445 [adminQuartzScheduler_Worker-2] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:28:04,503 [adminQuartzScheduler_Worker-2] <==      Total: 1
+2019-11-11 18:28:05,470 [adminQuartzScheduler_Worker-3] ==>  Preparing: select * from s_properties where sysname = ? 
+2019-11-11 18:28:05,470 [adminQuartzScheduler_Worker-3] ==> Parameters: SC-201903281920(String)
+2019-11-11 18:28:05,503 [adminQuartzScheduler_Worker-3] <==      Total: 1
